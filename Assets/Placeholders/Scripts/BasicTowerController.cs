@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicTowerController : MonoBehaviour
 {
     public float towerRadius = 3f;
-    public float shootingSpeed = 3f;
+    public float shootingDelay = 3f;
     public int bulletDamage;
     [SerializeField]
     LayerMask enemyLayer;
@@ -37,7 +37,6 @@ public class BasicTowerController : MonoBehaviour
             {
                 closestEnemy = enemy.gameObject;
                 closest = length;
-                Debug.Log("Closest: " + closestEnemy.name);
             }
         }
         return closestEnemy;
@@ -53,7 +52,7 @@ public class BasicTowerController : MonoBehaviour
                 bullet.target = nearestEnemy;
                 bullet.bulletDamage = bulletDamage;
                 Instantiate(bullet, transform.position, Quaternion.LookRotation(nearestEnemy.transform.position));
-                yield return new WaitForSeconds(shootingSpeed);
+                yield return new WaitForSeconds(shootingDelay);
             }
             yield return null;
         }
