@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3898417917062440360}
   - component: {fileID: 5247302196651917906}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: TurretFlame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32857c571a7c0b142ac154025ea9a9c7, type: 2}
+  - {fileID: 2100000, guid: 748589518d23e9642b42f9d2228f6cd9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
