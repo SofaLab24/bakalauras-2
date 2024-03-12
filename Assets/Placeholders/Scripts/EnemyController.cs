@@ -14,8 +14,9 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        currentWalkPoint = 0;
+        currentWalkPoint = walkPoints.Count-1;
         target = walkPoints[currentWalkPoint];
+        transform.position = target.position;
         transform.LookAt(target.position);
     }
     private void Update()
@@ -24,7 +25,7 @@ public class EnemyController : MonoBehaviour
         transform.position = transform.position + direction * walkSpeed * Time.deltaTime;
         if (Vector3.Distance(transform.position, target.position) <= 0.05)
         {
-            currentWalkPoint++;
+            currentWalkPoint--;
             target = walkPoints[currentWalkPoint];
         }
     }

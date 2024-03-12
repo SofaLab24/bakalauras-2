@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6749805938323230055}
   - component: {fileID: 693595978585947084}
   - component: {fileID: 2113418102361524073}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Path (4)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,9 +118,9 @@ GameObject:
   - component: {fileID: 3493811086539684087}
   - component: {fileID: 8367923603163135194}
   - component: {fileID: 5086998093848227508}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane (3)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,9 +224,9 @@ GameObject:
   - component: {fileID: 2340065367964977738}
   - component: {fileID: 33459822451074300}
   - component: {fileID: 1390653382867886747}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Path (3)
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,9 +327,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5611657228481135005}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PathSplit
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,6 +420,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerPosition (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Path
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -493,6 +503,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerPosition (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Path
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -568,6 +588,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerPosition (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Path
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -642,6 +672,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerPosition (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Path
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -715,6 +755,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037762892177500776, guid: c92d951a84ac93640ac444c79958315a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Path
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
