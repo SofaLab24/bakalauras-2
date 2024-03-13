@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public List<Transform> walkPoints;
     public float walkSpeed;
     public int health = 3;
+    public int moneyWorth = 1;
 
     private Rigidbody rb;
     private Transform target;
@@ -36,6 +37,7 @@ public class EnemyController : MonoBehaviour
         Debug.Log(health);
         if (health <= 0)
         {
+            FindFirstObjectByType<MoneyManager>().AddMoney(moneyWorth);
             Destroy(gameObject);   
         }
     }

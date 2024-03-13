@@ -62,7 +62,7 @@ public class PathGenerator : MonoBehaviour
         pathsToAdd = new List<GenerationLeaf>();
         paths.Add(new GenerationLeaf());
         paths[0].faceX = 0;
-        paths[0].faceZ = 1;
+        paths[0].faceZ = -1;
         paths[0].endLocation = firstLocation;
         paths[0].spawnFound = false;
         paths[0].pathIndex = pathCount;

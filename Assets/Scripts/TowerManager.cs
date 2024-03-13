@@ -28,10 +28,12 @@ public class TowerManager : MonoBehaviour
 
     public string selectedTower;
     private OverlayController _overlayController;
+    private MoneyManager _moneyManager;
 
     private void Start()
     {
         _overlayController = FindFirstObjectByType<OverlayController>();
+        _moneyManager = FindFirstObjectByType<MoneyManager>();
     }
 
     public void PlaceTower(GameObject callObject)
@@ -40,12 +42,13 @@ public class TowerManager : MonoBehaviour
         if (selectedTower == "") { return; }
 
         GameObject towerToPlace = arrowTower;
-        if (selectedTower == "ARROW")
+        if (selectedTower == "ARROW" && _moneyManager.BuyTower(_moneyManager.arrowTowerCost))
         { towerToPlace = arrowTower; }
-        else if (selectedTower == "FLAME")
+        else if (selectedTower == "FLAME" && _moneyManager.BuyTower(_moneyManager.flameTowerCost))
         { towerToPlace = flameTower; }
-        else if (selectedTower == "WIZARD")
+        else if (selectedTower == "WIZARD" && _moneyManager.BuyTower(_moneyManager.wizardTowerCost))
         { towerToPlace = wizardTower; }
+        else { return; }
 
         // tower placing
         Vector3 location = callObject.transform.position;

@@ -24,6 +24,11 @@ public class OverlayController : MonoBehaviour
     bool wizardSelected;
 
     VisualElement towerBar;
+    Label moneyCount;
+
+    //TESTING
+    PathGenerator pathGenerator;
+    Button pathButton;
 
     private void Start()
     {
@@ -33,12 +38,27 @@ public class OverlayController : MonoBehaviour
         mainOverlay.rootVisualElement.Q<VisualElement>("Top").pickingMode = PickingMode.Ignore;
         mainOverlay.rootVisualElement.Q<VisualElement>("Mid").pickingMode = PickingMode.Ignore;
         mainOverlay.rootVisualElement.Q<VisualElement>("Bot").pickingMode = PickingMode.Ignore;
+
+        mainOverlay.rootVisualElement.Q<VisualElement>("TopLeft").pickingMode = PickingMode.Ignore;
+        mainOverlay.rootVisualElement.Q<VisualElement>("TopMid").pickingMode = PickingMode.Ignore;
+        mainOverlay.rootVisualElement.Q<VisualElement>("TopRight").pickingMode = PickingMode.Ignore;
+        mainOverlay.rootVisualElement.Q<VisualElement>("MoneyTab").pickingMode = PickingMode.Ignore;
+        mainOverlay.rootVisualElement.Q<VisualElement>("CoinIcon").pickingMode = PickingMode.Ignore;
+        mainOverlay.rootVisualElement.Q<VisualElement>("MoneyCount").pickingMode = PickingMode.Ignore;
+
+
         towerBar = mainOverlay.rootVisualElement.Q<VisualElement>("TowerBar");
         towerBar.pickingMode = PickingMode.Ignore;
+        moneyCount = mainOverlay.rootVisualElement.Q<Label>("MoneyCount");
 
         arrowSelected = false;
         flameSelected = false;
         wizardSelected = false;
+
+        // ONLY FOR TESTING
+        pathGenerator = FindFirstObjectByType<PathGenerator>();
+        pathButton = mainOverlay.rootVisualElement.Q<Button>("TestButton");
+        pathButton.RegisterCallback<ClickEvent>(NewPath);
 
         // Load tower icons
         if (_towerManager.arrowTowerUnlocked)
@@ -70,8 +90,14 @@ public class OverlayController : MonoBehaviour
             towerBar.Add(towerIconElement);
             Debug.Log("Add Wizard Tower");
         }
-    }
 
+        // THIS NEEDS TO BE REWORKED SOMEHOW
+        UpdateMoney(50);
+    }
+    private void NewPath(ClickEvent evt)
+    {
+        pathGenerator.GeneratePaths();
+    }
     private void SelectTower(ClickEvent evt, string tower)
     {
         if (tower == "ARROW")
@@ -127,5 +153,9 @@ public class OverlayController : MonoBehaviour
         RemoveBorder("FLAME");
         RemoveBorder("WIZARD");
         _towerManager.selectedTower = "";
+    }
+    public void UpdateMoney(int money)
+    {
+        moneyCount.text = "" + money;
     }
 }

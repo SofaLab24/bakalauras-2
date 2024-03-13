@@ -1,6 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="RootElement" style="flex-grow: 1; width: 100%; height: 100%;">
-        <ui:VisualElement name="Top" style="flex-grow: 1; width: 100%; height: 25%;" />
+        <ui:VisualElement name="Top" style="flex-grow: 1; width: 100%; height: 25%; flex-direction: row;">
+            <ui:VisualElement name="TopLeft" style="flex-grow: 1; justify-content: center; align-items: center; align-self: center; width: 25%; height: 100%; position: absolute;">
+                <ui:Button text="TestButton" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton" style="width: 70%; height: 70%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="TopMid" style="flex-grow: 1; justify-content: center; align-items: center; align-self: center; width: 50%; height: 100%; position: absolute; left: 25%;" />
+            <ui:VisualElement name="TopRight" style="flex-grow: 1; justify-content: center; align-items: center; align-self: center; width: 25%; height: 100%; position: absolute; right: 0;">
+                <ui:VisualElement name="MoneyTab" style="flex-grow: 1; width: 100%; height: 30%; position: absolute; top: 0; flex-direction: row;">
+                    <ui:VisualElement name="CoinIcon" style="flex-grow: 1; position: absolute; left: 0; width: 20%; height: 100%; background-image: url(&apos;project://database/Assets/Art/coin_icon.png?fileID=2800000&amp;guid=056f62eb12791c447a6d82ddcec89f5b&amp;type=3#coin_icon&apos;); -unity-background-scale-mode: scale-to-fit;" />
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MoneyCount" style="position: absolute; left: 20%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; width: 80%; height: 100%; font-size: 75px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
         <ui:VisualElement name="Mid" style="flex-grow: 1; width: 100%; height: 50%;" />
         <ui:VisualElement name="Bot" style="flex-grow: 1; width: 100%; height: 25%;">
             <ui:VisualElement name="TowerBar" style="width: 75%; height: 75%; position: absolute; left: 12.5%; top: 12.5%; flex-direction: row; align-items: center; justify-content: center; align-self: center; max-width: 75%; min-width: 75%; max-height: 75%; min-height: 75%; flex-grow: 1;" />
