@@ -8,25 +8,52 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     List<Transform> baseWalkPoints;
     public List<List<Transform>> walkPoints;
-    public GameObject enemy;
-    public float spawnInterval = 5f;
+    public List<EnemyController> enemies;
+    public float spawnInterval = 2f;
+    public int waveNumber;
+    public int waveCoinMultiplier = 20;
+
+    List<EnemyController> currentWave;
+    OverlayController overlayController;
 
     public void Start()
     {
+        overlayController = FindFirstObjectByType<OverlayController>();
         walkPoints = new List<List<Transform>>
         {
             baseWalkPoints
         };
-        StartCoroutine(SpawnEnemies());
+        waveNumber = 0;
     }
     IEnumerator SpawnEnemies()
     {
-        while (true)
+        for (int i = 0; i < currentWave.Count; i++)
         {
-            enemy.GetComponent<EnemyController>().walkPoints = walkPoints[Random.Range(0, walkPoints.Count)];
-            Instantiate(enemy, transform.position, transform.rotation);
+            currentWave[i].walkPoints = walkPoints[Random.Range(0, walkPoints.Count)];
+            Instantiate(currentWave[i], transform.position, transform.rotation);
             yield return new WaitForSeconds(spawnInterval);
         }
+        overlayController.ShowNextWaveButton();
+    }
+    List<EnemyController> EnemiesToSpawn(int moneyCount)
+    {
+        List<EnemyController> enemiesArray = new List<EnemyController>();
+        while (moneyCount > 0)
+        {
+            EnemyController enemyToAdd = enemies[Random.Range(0, enemies.Count)];
+            if (enemyToAdd.moneyWorth < moneyCount + enemies[0].moneyWorth)
+            {
+                enemiesArray.Add(enemyToAdd);
+                moneyCount -= enemyToAdd.moneyWorth;
+            }
+        }
+        return enemiesArray;
+    }
+    public void GenerateNextWave()
+    {
+        waveNumber++;
+        currentWave = EnemiesToSpawn(waveNumber * waveCoinMultiplier);
+        StartCoroutine(SpawnEnemies());
     }
     public void AddWalkPoint(Vector3 pos, int pathIndex)
     {

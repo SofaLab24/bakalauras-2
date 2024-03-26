@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicTowerController : MonoBehaviour
+public class ArrowTowerController : MonoBehaviour
 {
-    public float towerRadius = 3f;
-    public float shootingDelay = 3f;
-    public int bulletDamage;
+    public float towerRadius = 5f;
+    public float shootingDelay = 2f;
+    public int bulletDamage = 2;
     [SerializeField]
     LayerMask enemyLayer;
     [SerializeField]
@@ -32,11 +32,15 @@ public class BasicTowerController : MonoBehaviour
 
         foreach(var enemy in Enemies)
         {
-            float length = GameUtilities.VectorDifference(enemy.transform.position, transform.position);
-            if (length <= closest)
+            EnemyController en = enemy.GetComponent<EnemyController>();
+            if (!en.isDead)
             {
-                closestEnemy = enemy.gameObject;
-                closest = length;
+                float length = GameUtilities.VectorDifference(enemy.transform.position, transform.position);
+                if (length <= closest)
+                {
+                    closestEnemy = enemy.gameObject;
+                    closest = length;
+                }
             }
         }
         return closestEnemy;

@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
 public class OverlayController : MonoBehaviour
 {
     // TODO: Add tower scriptable objects and create the TowerController.cs from BasicTowerController.cs accordingly
     TowerManager _towerManager;
+    [Header("Towers")]
     [SerializeField]
     Texture2D arrowTowerIcon;
     [SerializeField]
@@ -19,16 +21,30 @@ public class OverlayController : MonoBehaviour
     [SerializeField]
     VisualTreeAsset towerIconPrefabTree;
 
+    [Header("Hearts")]
+    BaseController baseController;
+    [SerializeField]
+    VisualTreeAsset heartIconPrefabTree;
+    [SerializeField]
+    Texture2D fullHeartIcon;
+    [SerializeField]
+    Texture2D emptyHeartIcon;
+    int currentHealth;
+    List<VisualElement> heartIcons;
+
     bool arrowSelected;
     bool flameSelected;
     bool wizardSelected;
 
     VisualElement towerBar;
+    VisualElement heartBar;
     Label moneyCount;
 
-    //TESTING
+    public bool isCurrentlyInWave;
+
     PathGenerator pathGenerator;
-    Button pathButton;
+    Button nextWaveButton;
+    EnemySpawner enemySpawner;
 
     private void Start()
     {
@@ -49,16 +65,35 @@ public class OverlayController : MonoBehaviour
 
         towerBar = mainOverlay.rootVisualElement.Q<VisualElement>("TowerBar");
         towerBar.pickingMode = PickingMode.Ignore;
+
+        // Hearts overlay
+        baseController = FindFirstObjectByType<BaseController>();
+        heartBar = mainOverlay.rootVisualElement.Q<VisualElement>("HeartsContainer");
+        heartBar.pickingMode = PickingMode.Ignore;
+
+        currentHealth = baseController.maxHealth;
+        heartIcons = new List<VisualElement>();
+        for (int i = 0; i < currentHealth; i++)
+        {
+            VisualElement heartIconElement = heartIconPrefabTree.CloneTree().Q("HeartIcon");
+            heartIconElement.style.backgroundImage = fullHeartIcon;
+            heartIcons.Add(heartIconElement.Q<VisualElement>());
+            heartBar.Add(heartIcons[heartIcons.Count - 1]);
+        }
+
+        // Money generation
         moneyCount = mainOverlay.rootVisualElement.Q<Label>("MoneyCount");
 
         arrowSelected = false;
         flameSelected = false;
         wizardSelected = false;
 
-        // ONLY FOR TESTING
+        // Wave generation
         pathGenerator = FindFirstObjectByType<PathGenerator>();
-        pathButton = mainOverlay.rootVisualElement.Q<Button>("TestButton");
-        pathButton.RegisterCallback<ClickEvent>(NewPath);
+        enemySpawner = FindFirstObjectByType<EnemySpawner>();
+        nextWaveButton = mainOverlay.rootVisualElement.Q<Button>("NextWaveButton");
+        nextWaveButton.RegisterCallback<ClickEvent>(NewWave);
+        isCurrentlyInWave = false;
 
         // Load tower icons
         if (_towerManager.arrowTowerUnlocked)
@@ -94,9 +129,25 @@ public class OverlayController : MonoBehaviour
         // THIS NEEDS TO BE REWORKED SOMEHOW
         UpdateMoney(50);
     }
-    private void NewPath(ClickEvent evt)
+    public void TakeDamage(int damage)
     {
+        Debug.Log(damage);
+        currentHealth -= damage;
+        for (int i = currentHealth; i < heartIcons.Count; i++)
+        {
+            heartIcons[i].style.backgroundImage = emptyHeartIcon;
+        }
+    }
+    private void NewWave(ClickEvent evt)
+    {
+        isCurrentlyInWave = true;
         pathGenerator.GeneratePaths();
+        enemySpawner.GenerateNextWave();
+        nextWaveButton.style.visibility = Visibility.Hidden;
+    }
+    public void ShowNextWaveButton()
+    {
+        nextWaveButton.style.visibility = Visibility.Visible;
     }
     private void SelectTower(ClickEvent evt, string tower)
     {

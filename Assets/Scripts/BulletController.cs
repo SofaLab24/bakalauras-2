@@ -22,7 +22,6 @@ public class BulletController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Huh");
         if (other.gameObject == target)
         {
             other.GetComponent<EnemyController>().TakeDamage(bulletDamage);

@@ -1,3 +1,3 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="TowerIcon" style="flex-grow: 1; width: 7.5%; height: 60%; background-color: rgba(174, 67, 166, 0.69); max-width: 7.5%; min-width: 7.5%; max-height: 60%; min-height: 60%; position: relative; align-self: center; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;" />
+    <ui:VisualElement name="TowerIcon" style="flex-grow: 1; width: 7.5%; height: 60%; background-color: rgba(174, 67, 166, 0.58); max-width: 7.5%; min-width: 7.5%; max-height: 60%; min-height: 60%; position: relative; align-self: center; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;" />
 </ui:UXML>

@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerRadius: 5
-  shootingDelay: 1
+  shootingDelay: 0.2
   bulletDamage: 1
   enemyLayer:
     serializedVersion: 2
