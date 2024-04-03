@@ -127,7 +127,7 @@ public class OverlayController : MonoBehaviour
         }
 
         // THIS NEEDS TO BE REWORKED SOMEHOW
-        UpdateMoney(50);
+        UpdateMoney(100);
     }
     public void TakeDamage(int damage)
     {

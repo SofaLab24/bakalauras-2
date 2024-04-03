@@ -52,7 +52,7 @@ public class TowerManager : MonoBehaviour
 
         // tower placing
         Vector3 location = callObject.transform.position;
-        Instantiate(towerToPlace, new Vector3(location.x, location.y + arrowTowerHeightOffset, location.z), Quaternion.identity);
+        Instantiate(towerToPlace, new Vector3(location.x, location.y + arrowTowerHeightOffset, location.z), towerToPlace.transform.rotation);
         _overlayController.DeselectTower();
         Destroy(callObject);
     }

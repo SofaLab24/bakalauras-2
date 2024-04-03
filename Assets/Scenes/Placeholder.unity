@@ -778,79 +778,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!1001 &1090624142
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1277716438502899527, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.0051212
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.050001144
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 52.99799
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.94129395
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.3375881
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -39.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6542605579208244551, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
-        type: 3}
-      propertyPath: m_Name
-      value: TurretWizard
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a6c62e4a8e26e5c48acdc8f24f469ad3, type: 3}
 --- !u!1 &1209677652
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,74 +809,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 590552560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1353339311
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.4798396
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.050002098
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 57.41975
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9812423
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.19277883
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -22.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496704128873907995, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6542605579208244551, guid: e66353902898ff84f89daf909d722613,
-        type: 3}
-      propertyPath: m_Name
-      value: TurretFlame
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e66353902898ff84f89daf909d722613, type: 3}
 --- !u!1 &1478059476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,11 +1004,11 @@ MonoBehaviour:
     type: 3}
   arrowTowerHeightOffset: 0.6
   arrowTowerUnlocked: 1
-  flameTower: {fileID: 6542605579208244551, guid: e66353902898ff84f89daf909d722613,
+  flameTower: {fileID: 1568053842060716113, guid: f550bfba8a974a0449aef3a11dd87a9c,
     type: 3}
   flameTowerHeightOffset: 0.6
   flameTowerUnlocked: 1
-  wizardTower: {fileID: 6542605579208244551, guid: a6c62e4a8e26e5c48acdc8f24f469ad3,
+  wizardTower: {fileID: 3970083472203600758, guid: cef3b22707b304b49b12d555111a0ef6,
     type: 3}
   wizardTowerHeightOffset: 0.6
   wizardTowerUnlocked: 1
@@ -1166,7 +1025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1e5c557eb1826488dae280ee2d10ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 50
+  currentMoney: 100
   arrowTowerCost: 25
   flameTowerCost: 50
   wizardTowerCost: 75
@@ -1431,5 +1290,3 @@ SceneRoots:
   - {fileID: 2147232190}
   - {fileID: 264832105}
   - {fileID: 1918563520}
-  - {fileID: 1090624142}
-  - {fileID: 1353339311}
