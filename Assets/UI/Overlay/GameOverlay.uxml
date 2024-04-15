@@ -1,22 +1,26 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainMenu/MainMenuButtons.uss?fileID=7433441132597879392&amp;guid=c3e17f6b6199854448a0ba7834147310&amp;type=3#MainMenuButtons" />
     <ui:VisualElement name="RootElement" style="flex-grow: 1; width: 100%; height: 100%;">
-        <ui:VisualElement name="Top" style="flex-grow: 1; width: 100%; height: 25%; flex-direction: row;">
+        <ui:VisualElement name="Top" style="flex-grow: 1; width: 100%; height: 25%; flex-direction: row; position: absolute; top: 5%;">
             <ui:VisualElement name="TopLeft" style="flex-grow: 1; justify-content: center; align-items: center; align-self: center; width: 25%; height: 100%; position: absolute;">
-                <ui:Button text="NextWave" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NextWaveButton" style="width: 70%; height: 70%; font-size: 45px;" />
+                <ui:Button text="NextWave" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NextWaveButton" class="selectButtons" style="width: 85%; height: 70%; font-size: 40px; background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); text-overflow: ellipsis;" />
             </ui:VisualElement>
             <ui:VisualElement name="TopMid" style="flex-grow: 1; justify-content: center; align-items: center; align-self: center; width: 50%; height: 100%; position: absolute; left: 25%;">
-                <ui:Label tabindex="-1" text="Wave: 0" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 50%; height: 40%; position: absolute; top: 0; left: 25%; font-size: 70px; -unity-text-align: middle-center;" />
+                <ui:Label tabindex="-1" text="Wave: 0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WaveCounter" style="width: 50%; height: 40%; position: absolute; top: 0; left: 25%; font-size: 70px; -unity-text-align: middle-center; color: rgb(149, 67, 146); -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 2px; -unity-font-definition: url(&apos;project://database/Assets/Art/Fonts/LTFlodeNeue-SemiBold%20SDF.asset?fileID=11400000&amp;guid=783e259d1d7f2584bb3cecc6f851c330&amp;type=2#LTFlodeNeue-SemiBold SDF&apos;);" />
+                <ui:Label tabindex="-1" text="Game Over" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GameOver" class="staticLabels" style="visibility: hidden;" />
             </ui:VisualElement>
             <ui:VisualElement name="TopRight" style="flex-grow: 1; justify-content: center; align-items: center; align-self: center; width: 25%; height: 100%; position: absolute; right: 0;">
                 <ui:VisualElement name="MoneyTab" style="flex-grow: 1; width: 100%; height: 30%; position: absolute; top: 0; flex-direction: row;">
                     <ui:VisualElement name="CoinIcon" style="flex-grow: 1; position: absolute; left: 0; width: 20%; height: 100%; background-image: url(&apos;project://database/Assets/Art/coin_icon.png?fileID=2800000&amp;guid=056f62eb12791c447a6d82ddcec89f5b&amp;type=3#coin_icon&apos;); -unity-background-scale-mode: scale-to-fit;" />
-                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MoneyCount" style="position: absolute; left: 20%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; width: 80%; height: 100%; font-size: 53px; -unity-text-align: middle-left;" />
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MoneyCount" style="position: absolute; left: 20%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; width: 80%; height: 100%; font-size: 53px; -unity-text-align: middle-left; color: rgb(149, 67, 146); -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 2px; -unity-font-definition: url(&apos;project://database/Assets/Art/Fonts/LTFlodeNeue-SemiBold%20SDF.asset?fileID=11400000&amp;guid=783e259d1d7f2584bb3cecc6f851c330&amp;type=2#LTFlodeNeue-SemiBold SDF&apos;);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="HeartsContainer" style="flex-grow: 1; position: absolute; left: 0; bottom: 0; width: 100%; height: 70%; flex-direction: row; align-items: center; justify-content: center; align-self: center;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Mid" style="flex-grow: 1; width: 100%; height: 50%;" />
-        <ui:VisualElement name="Bot" style="flex-grow: 1; width: 100%; height: 25%;">
+        <ui:VisualElement name="Mid" style="flex-grow: 1; width: 100%; height: 45%; position: absolute; top: 30%;">
+            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TestButton" style="width: 19%; height: 25%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Bot" style="flex-grow: 1; width: 100%; height: 25%; position: absolute; bottom: 0;">
             <ui:VisualElement name="TowerBar" style="width: 75%; height: 75%; position: absolute; left: 12.5%; top: 12.5%; flex-direction: row; align-items: center; justify-content: center; align-self: center; max-width: 75%; min-width: 75%; max-height: 75%; min-height: 75%; flex-grow: 1;" />
         </ui:VisualElement>
     </ui:VisualElement>

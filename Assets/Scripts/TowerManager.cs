@@ -30,6 +30,29 @@ public class TowerManager : MonoBehaviour
     private OverlayController _overlayController;
     private MoneyManager _moneyManager;
 
+    const string HIGHSCORE = "HIGHSCORE";
+
+    private void Awake()
+    {
+        int currentHighscore = PlayerPrefs.GetInt(HIGHSCORE);
+        if (currentHighscore >= 20)
+        {
+            flameTowerUnlocked = true;
+            if (currentHighscore >= 60)
+            {
+                wizardTowerUnlocked = true;
+            }
+            else
+            {
+                wizardTowerUnlocked = false;
+            }
+        }
+        else
+        {
+            flameTowerUnlocked = false;
+            wizardTowerUnlocked = false;
+        }
+    }
     private void Start()
     {
         _overlayController = FindFirstObjectByType<OverlayController>();

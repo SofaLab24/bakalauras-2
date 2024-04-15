@@ -1,0 +1,46 @@
+.selectButtons {
+    font-size: 80px;
+    color: rgba(159, 95, 207, 0.6);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    -unity-text-outline-width: 3px;
+    -unity-text-outline-color: rgba(125, 88, 128, 0.45);
+    -unity-font-definition: url('project://database/Assets/Art/Fonts/LTFlodeNeue-SemiBold%20SDF.asset?fileID=11400000&guid=783e259d1d7f2584bb3cecc6f851c330&type=2#LTFlodeNeue-SemiBold SDF');
+    transition-duration: 0.2s;
+}
+
+.selectButtons:hover {
+    font-size: 89px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
+    transition-duration: 0.3s;
+    color: rgb(163, 126, 190);
+}
+
+.blurred {
+    opacity: 0.3;
+}
+
+.staticLabels {
+    font-size: 80px;
+    color: rgba(159, 95, 207, 0.6);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    -unity-text-outline-width: 3px;
+    -unity-text-outline-color: rgba(125, 88, 128, 0.45);
+    -unity-font-definition: url('project://database/Assets/Art/Fonts/LTFlodeNeue-SemiBold%20SDF.asset?fileID=11400000&guid=783e259d1d7f2584bb3cecc6f851c330&type=2#LTFlodeNeue-SemiBold SDF');
+    transition-duration: 0.2s;
+}
+
+.highscoreLabel {
+    font-size: 80px;
+    color: rgba(111, 10, 37, 0.85);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    -unity-text-outline-width: 3px;
+    -unity-text-outline-color: rgba(125, 88, 128, 0.45);
+    -unity-font-definition: url('project://database/Assets/Art/Fonts/LTFlodeNeue-SemiBold%20SDF.asset?fileID=11400000&guid=783e259d1d7f2584bb3cecc6f851c330&type=2#LTFlodeNeue-SemiBold SDF');
+    transition-duration: 0.2s;
+}

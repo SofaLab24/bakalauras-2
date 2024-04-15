@@ -16,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
     List<EnemyController> currentWave;
     OverlayController overlayController;
 
+    const string HIGHSCORE = "HIGHSCORE";
+
     public void Start()
     {
         overlayController = FindFirstObjectByType<OverlayController>();
@@ -67,5 +69,14 @@ public class EnemySpawner : MonoBehaviour
         Debug.Log("Copying index " + originalIndex + " list into index " +  newIndex);
         walkPoints.Add(new List<Transform>(walkPoints[originalIndex]));
         AddWalkPoint(pos, newIndex);
+    }
+    public void DeathEvent()
+    {
+        int currentHighscore = PlayerPrefs.GetInt(HIGHSCORE);
+        Debug.Log("Player prefs: " + currentHighscore + "; current: " + waveNumber);
+        if (currentHighscore < waveNumber)
+        {
+            PlayerPrefs.SetInt(HIGHSCORE, waveNumber);
+        }
     }
 }

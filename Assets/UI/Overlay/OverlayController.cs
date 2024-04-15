@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 
 public class OverlayController : MonoBehaviour
 {
-    // TODO: Add tower scriptable objects and create the TowerController.cs from BasicTowerController.cs accordingly
     TowerManager _towerManager;
     [Header("Towers")]
     [SerializeField]
@@ -46,8 +45,21 @@ public class OverlayController : MonoBehaviour
     Button nextWaveButton;
     EnemySpawner enemySpawner;
 
+    Label waveCounter;
+    int currentWave;
+
+    [SerializeField]
+    VisualTreeAsset deathOverlay;
+    Label gameOverLabel;
+    bool isDead;
+    const string DEATH_LABEL_CLASS = "blurred";
+
+    Button testButton;
+
     private void Start()
     {
+        isDead = false;
+        currentWave = 0;
         _towerManager = FindFirstObjectByType<TowerManager>();
         mainOverlay = GetComponent<UIDocument>();
         mainOverlay.rootVisualElement.Q<VisualElement>("RootElement").pickingMode = PickingMode.Ignore;
@@ -89,11 +101,17 @@ public class OverlayController : MonoBehaviour
         wizardSelected = false;
 
         // Wave generation
+        waveCounter = mainOverlay.rootVisualElement.Q<Label>("WaveCounter");
         pathGenerator = FindFirstObjectByType<PathGenerator>();
         enemySpawner = FindFirstObjectByType<EnemySpawner>();
         nextWaveButton = mainOverlay.rootVisualElement.Q<Button>("NextWaveButton");
         nextWaveButton.RegisterCallback<ClickEvent>(NewWave);
         isCurrentlyInWave = false;
+
+        // Death screen setup
+        testButton = mainOverlay.rootVisualElement.Q<Button>("TestButton");
+        testButton.RegisterCallback<ClickEvent>(TestMethod);
+        gameOverLabel = mainOverlay.rootVisualElement.Q<Label>("GameOver");
 
         // Load tower icons
         if (_towerManager.arrowTowerUnlocked)
@@ -129,14 +147,34 @@ public class OverlayController : MonoBehaviour
         // THIS NEEDS TO BE REWORKED SOMEHOW
         UpdateMoney(100);
     }
+    public void TestMethod(ClickEvent evt)
+    {
+        TakeDamage(5);
+    }
     public void TakeDamage(int damage)
     {
-        Debug.Log(damage);
         currentHealth -= damage;
         for (int i = currentHealth; i < heartIcons.Count; i++)
         {
             heartIcons[i].style.backgroundImage = emptyHeartIcon;
         }
+        // Death check
+        if (currentHealth <= 0) 
+        {
+            DeathScreen();
+        }
+    }
+    void DeathScreen()
+    {
+        isDead = true;
+        gameOverLabel.style.visibility = Visibility.Visible;
+        waveCounter.AddToClassList(DEATH_LABEL_CLASS);
+        moneyCount.AddToClassList(DEATH_LABEL_CLASS);
+        foreach(var child in towerBar.Children())
+        {
+            child.AddToClassList(DEATH_LABEL_CLASS);
+        }
+        enemySpawner.DeathEvent();
     }
     private void NewWave(ClickEvent evt)
     {
@@ -144,6 +182,8 @@ public class OverlayController : MonoBehaviour
         pathGenerator.GeneratePaths();
         enemySpawner.GenerateNextWave();
         nextWaveButton.style.visibility = Visibility.Hidden;
+        currentWave++;
+        waveCounter.text = "Wave: " + currentWave;
     }
     public void ShowNextWaveButton()
     {
@@ -151,6 +191,10 @@ public class OverlayController : MonoBehaviour
     }
     private void SelectTower(ClickEvent evt, string tower)
     {
+        if (isDead)
+        {
+            return;
+        }
         if (tower == "ARROW")
         {
             arrowSelected = true;

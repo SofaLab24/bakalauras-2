@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainMenu/MainMenuButtons.uss?fileID=7433441132597879392&amp;guid=c3e17f6b6199854448a0ba7834147310&amp;type=3#MainMenuButtons" />
+    <ui:VisualElement name="Wrapper" style="flex-grow: 1; width: 100%; height: 100%;">
+        <ui:VisualElement name="ArrowIcon" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/arrow_tower_icon.png?fileID=2800000&amp;guid=0b1c6435607e62c43b17235e11b26dfc&amp;type=3#arrow_tower_icon&apos;); width: 70%; height: 20%; position: absolute; left: 15%; -unity-background-scale-mode: scale-to-fit; top: 10%;" />
+        <ui:VisualElement name="FlameIcon" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/flame_tower_icon.png?fileID=2800000&amp;guid=f1503b68ef5517f428aa471ff33c96e1&amp;type=3#flame_tower_icon&apos;); width: 70%; height: 20%; position: absolute; left: 15%; -unity-background-scale-mode: scale-to-fit; top: 35%; align-items: center; justify-content: center;">
+            <ui:Label tabindex="-1" text="Highscore of 20 required" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlameLock" class="highscoreLabel" style="visibility: visible;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="WizardIcon" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/wizard_tower_icon.png?fileID=2800000&amp;guid=b8f9d5a6e791aa2488fa588f0122942c&amp;type=3#wizard_tower_icon&apos;); width: 70%; height: 20%; position: absolute; left: 15%; -unity-background-scale-mode: scale-to-fit; top: 60%; align-items: center; justify-content: center;">
+            <ui:Label tabindex="-1" text="Highscore of 60 required" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WizardLock" class="highscoreLabel" />
+        </ui:VisualElement>
+        <ui:Label tabindex="-1" text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="selectButtons" style="width: 70%; height: 10%; position: absolute; bottom: 5%; left: 15%;" />
+    </ui:VisualElement>
+</ui:UXML>
