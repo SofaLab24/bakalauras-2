@@ -64,18 +64,30 @@ public class TowerManager : MonoBehaviour
         // tower selector
         if (selectedTower == "") { return; }
 
+        float offset;
+
         GameObject towerToPlace = arrowTower;
         if (selectedTower == "ARROW" && _moneyManager.BuyTower(_moneyManager.arrowTowerCost))
-        { towerToPlace = arrowTower; }
+        { 
+            towerToPlace = arrowTower;
+            offset = arrowTowerHeightOffset;
+        }
         else if (selectedTower == "FLAME" && _moneyManager.BuyTower(_moneyManager.flameTowerCost))
-        { towerToPlace = flameTower; }
+        {
+            towerToPlace = flameTower;
+            offset = flameTowerHeightOffset;
+        }
         else if (selectedTower == "WIZARD" && _moneyManager.BuyTower(_moneyManager.wizardTowerCost))
-        { towerToPlace = wizardTower; }
+        {
+            towerToPlace = wizardTower;
+            offset = wizardTowerHeightOffset;
+        }
         else { return; }
+
 
         // tower placing
         Vector3 location = callObject.transform.position;
-        Instantiate(towerToPlace, new Vector3(location.x, location.y + arrowTowerHeightOffset, location.z), towerToPlace.transform.rotation);
+        Instantiate(towerToPlace, new Vector3(location.x, location.y + offset, location.z), towerToPlace.transform.rotation);
         _overlayController.DeselectTower();
         Destroy(callObject);
     }

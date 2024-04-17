@@ -87,7 +87,7 @@ public class MainMenuUIController : MonoBehaviour
     }
     void TestMethod(ClickEvent evt)
     {
-        menuManager.SetHighscore(50);
+        menuManager.SetHighscore(100);
         int currentHighScore = PlayerPrefs.GetInt(HIGHSCORE);
         highScore.text = "Highscore: " + currentHighScore;
     }
