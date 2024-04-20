@@ -29,4 +29,24 @@ public class MoneyManager : MonoBehaviour
             return true;
         }
     }
+    public bool BuyTower(string towerName)
+    {
+        if (towerName == "ARROW")
+        {
+            return BuyTower(arrowTowerCost);
+        }
+        else if (towerName == "FLAME")
+        {
+            return BuyTower(flameTowerCost);
+        }
+        else if (towerName == "WIZARD")
+        {
+            return BuyTower(wizardTowerCost);
+        }
+        else
+        {
+            return false;
+        }
+
+    }
 }
