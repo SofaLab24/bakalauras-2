@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < currentWave.Count; i++)
         {
             currentWave[i].walkPoints = walkPoints[Random.Range(0, walkPoints.Count)];
-            Instantiate(currentWave[i], transform.position, transform.rotation);
+            Instantiate(currentWave[i], new Vector3(transform.position.x, transform.position.y + currentWave[i].heightOffset, transform.position.z), Quaternion.identity);
             yield return new WaitForSeconds(spawnInterval);
         }
         overlayController.ShowNextWaveButton();

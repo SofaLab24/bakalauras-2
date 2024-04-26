@@ -33,12 +33,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68aa87786e8c0d045a435183a615bf33, type: 3}
   m_Name: DownscaleEffect
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     IsEnabled: 1
     WhenToInsert: 550
     MaterialToBlit: {fileID: 2100000, guid: f93db50d91e5e6847bed630ba87f482e, type: 2}
-    DownscaleAmount: 3
+    DownscaleAmount: 4
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

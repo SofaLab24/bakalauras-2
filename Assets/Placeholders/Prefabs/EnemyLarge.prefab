@@ -152,12 +152,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   walkSpeed: 1.5
   health: 5
   moneyWorth: 30
   damage: 3
   isDead: 0
+  explosionSound: {fileID: 8300000, guid: 5febcfa2e58bbe542804b7d6918cd7b3, type: 3}
 --- !u!2083052967 &1332950656542851612
 VisualEffect:
   m_ObjectHideFlags: 0

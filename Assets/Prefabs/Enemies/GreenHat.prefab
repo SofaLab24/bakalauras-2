@@ -109,6 +109,7 @@ MonoBehaviour:
   moneyWorth: 10
   damage: 1
   isDead: 0
+  explosionSound: {fileID: 8300000, guid: 5febcfa2e58bbe542804b7d6918cd7b3, type: 3}
 --- !u!73398921 &-3222806808682004352
 VFXRenderer:
   serializedVersion: 1

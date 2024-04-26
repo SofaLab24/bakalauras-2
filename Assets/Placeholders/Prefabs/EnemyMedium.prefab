@@ -157,6 +157,7 @@ MonoBehaviour:
   moneyWorth: 20
   damage: 2
   isDead: 0
+  explosionSound: {fileID: 8300000, guid: 5febcfa2e58bbe542804b7d6918cd7b3, type: 3}
 --- !u!2083052967 &3485882393917889388
 VisualEffect:
   m_ObjectHideFlags: 0

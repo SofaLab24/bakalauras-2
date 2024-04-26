@@ -104,6 +104,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   lightningBeam: {fileID: 5696528469028773253}
+  lightningSound: {fileID: 8300000, guid: fff0b32d4a614bf4291ba2d294c75c93, type: 3}
 --- !u!1 &4963198245653179287
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class FlameTowerController: MonoBehaviour
 
     GameObject nearestEnemy;
 
+    public AudioClip spraySound;
+
     public void Start()
     {
         StartCoroutine(ShootAtEnemy());
@@ -57,6 +59,7 @@ public class FlameTowerController: MonoBehaviour
                 nearestEnemy.GetComponent<EnemyController>().TakeDamage(towerDamage);
                 flameSpray.transform.LookAt(nearestEnemy.transform.position);
                 flameSpray.Play();
+                AudioManager.Instance.PlaySound(spraySound, transform.position);
                 yield return new WaitForSeconds(shootingDelay);
             }
             yield return null;

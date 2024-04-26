@@ -15,6 +15,8 @@ public class WizardTowerController : MonoBehaviour
 
     GameObject nearestEnemy;
 
+    public AudioClip lightningSound;
+
     public void Start()
     {
         StartCoroutine(ShootAtEnemy());
@@ -58,6 +60,7 @@ public class WizardTowerController : MonoBehaviour
                 lightningBeam.transform.LookAt(nearestEnemy.transform.position);
                 lightningBeam.SetFloat("Distance", Vector3.Distance(lightningBeam.transform.position, nearestEnemy.transform.position));
                 lightningBeam.Play();
+                AudioManager.Instance.PlaySound(lightningSound, transform.position);
                 yield return new WaitForSeconds(shootingDelay);
             }
             yield return null;

@@ -18,6 +18,10 @@ public class EnemyController : MonoBehaviour
     private Rigidbody rb;
     private Transform target;
     private int currentWalkPoint;
+
+    public float heightOffset = 0f;
+
+    public AudioClip explosionSound;
     private void Start()
     {
         hasDeathExplosionPlayed = false;
@@ -33,6 +37,7 @@ public class EnemyController : MonoBehaviour
     {
         if (!isDead)
         {
+            transform.LookAt(walkPoints[currentWalkPoint]);
             Vector3 direction = (target.position - transform.position).normalized;
             transform.position = transform.position + direction * walkSpeed * Time.deltaTime;
             if (Vector3.Distance(transform.position, target.position) <= 0.05)
@@ -53,6 +58,7 @@ public class EnemyController : MonoBehaviour
     }
     public void PlayDeathExplosion()
     {
+        AudioManager.Instance.PlaySound(explosionSound, transform.position);
         deathExplosion.Play();
         isDead = true;
     }
