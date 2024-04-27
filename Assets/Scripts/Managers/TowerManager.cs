@@ -40,7 +40,10 @@ public class TowerManager : MonoBehaviour
     GameObject arrowWizardTower;
     [SerializeField]
     private float arrowWizardTowerHeightOffset;
-
+    [SerializeField]
+    GameObject flameWizardTower;
+    [SerializeField]
+    private float flameWizardTowerHeightOffset;
 
     public string selectedTower;
     private OverlayController _overlayController;
@@ -129,6 +132,15 @@ public class TowerManager : MonoBehaviour
             callObject.GetComponent<TowerCombinationController>().DestroyCurrentTower();
 
             Instantiate(arrowWizardTower, new Vector3(location.x, location.y + arrowWizardTowerHeightOffset, location.z), arrowWizardTower.transform.rotation);
+            _overlayController.DeselectTower();
+        } // Fire + Wizard
+        else if (((selectedTower == flameTowerName && towerType == wizardTowerName) || (selectedTower == wizardTowerName && towerType == flameTowerName))
+    && _moneyManager.BuyTower(selectedTower))
+        {
+            Vector3 location = callObject.transform.position;
+            callObject.GetComponent<TowerCombinationController>().DestroyCurrentTower();
+
+            Instantiate(flameWizardTower, new Vector3(location.x, location.y + flameWizardTowerHeightOffset, location.z), flameWizardTower.transform.rotation);
             _overlayController.DeselectTower();
         }
     }

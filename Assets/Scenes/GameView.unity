@@ -1884,6 +1884,9 @@ MonoBehaviour:
   arrowWizardTower: {fileID: 4627737061782156960, guid: 36f8dd0b96e32bc40aea1b405c5ab2c1,
     type: 3}
   arrowWizardTowerHeightOffset: 1
+  flameWizardTower: {fileID: 5286983477555997725, guid: 963e6905d26f53642afdfe84ecd4eef1,
+    type: 3}
+  flameWizardTowerHeightOffset: 1.2
   selectedTower: 
 --- !u!114 &1876883257
 MonoBehaviour:
