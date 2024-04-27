@@ -37,10 +37,13 @@ public class EnemyController : MonoBehaviour
     {
         if (!isDead)
         {
-            transform.LookAt(walkPoints[currentWalkPoint]);
+            transform.LookAt(new Vector3(walkPoints[currentWalkPoint].position.x, heightOffset, walkPoints[currentWalkPoint].position.z));
             Vector3 direction = (target.position - transform.position).normalized;
+            direction = new Vector3(direction.x, 0, direction.z);
             transform.position = transform.position + direction * walkSpeed * Time.deltaTime;
-            if (Vector3.Distance(transform.position, target.position) <= 0.05)
+            transform.position = new Vector3(transform.position.x, heightOffset, transform.position.z);
+            
+            if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(target.position.x, target.position.z)) <= 0.05)
             {
                 currentWalkPoint--;
                 target = walkPoints[currentWalkPoint];
@@ -60,6 +63,7 @@ public class EnemyController : MonoBehaviour
     {
         AudioManager.Instance.PlaySound(explosionSound, transform.position);
         deathExplosion.Play();
+        GetComponent<MeshRenderer>().enabled = false;
         isDead = true;
     }
     public void TakeDamage(int damage)

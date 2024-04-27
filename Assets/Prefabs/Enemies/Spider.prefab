@@ -109,6 +109,7 @@ MonoBehaviour:
   moneyWorth: 20
   damage: 2
   isDead: 0
+  heightOffset: 0.04
   explosionSound: {fileID: 8300000, guid: 5febcfa2e58bbe542804b7d6918cd7b3, type: 3}
 --- !u!136 &6437683923901847272
 CapsuleCollider:

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1607980347653034615}
   - component: {fileID: 4714974806290169429}
   - component: {fileID: 7356864315819514627}
+  - component: {fileID: -1733264569381250114}
+  - component: {fileID: 685566676388103539}
   m_Layer: 0
   m_Name: ArrowFlameTower
   m_TagString: Untagged
@@ -83,3 +85,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-1733264569381250114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444066607547217917}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.038607337, y: 0.021531375, z: 0.1240523}
+  m_Center: {x: 0.00037448108, y: -0.00000000325963, z: 0.06202615}
+--- !u!114 &685566676388103539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444066607547217917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4be14d8f5c6ae84c9ac147036d4288c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerRadius: 10
+  shootingDelay: 0.5
+  bulletDamage: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  bullet: {fileID: -6010427583876324991, guid: 4df142bd366784b44b94c741b2e8afad, type: 3}

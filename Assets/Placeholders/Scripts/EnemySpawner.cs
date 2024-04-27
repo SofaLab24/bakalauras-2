@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
     {
         Debug.Log("Adding path to index: " +  pathIndex);
         GameObject objToSpawn = new GameObject();
-        objToSpawn.transform.position = new Vector3(pos.x, pos.y + 1, pos.z);
+        objToSpawn.transform.position = new Vector3(pos.x, pos.y, pos.z);
         walkPoints[pathIndex].Add(Instantiate(objToSpawn).transform);
     }
     public void AddNewPath(Vector3 pos, int newIndex, int originalIndex)
