@@ -44,3 +44,37 @@
     -unity-font-definition: url('project://database/Assets/Art/Fonts/LTFlodeNeue-SemiBold%20SDF.asset?fileID=11400000&guid=783e259d1d7f2584bb3cecc6f851c330&type=2#LTFlodeNeue-SemiBold SDF');
     transition-duration: 0.2s;
 }
+
+.achievement {
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    width: 35%;
+    height: 30%;
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+
+.achievementLabel {
+    font-size: 21px;
+    color: rgba(66, 16, 103, 0.89);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    -unity-font-definition: url('project://database/Assets/Art/Fonts/LTFlodeNeue-SemiBold%20SDF.asset?fileID=11400000&guid=783e259d1d7f2584bb3cecc6f851c330&type=2#LTFlodeNeue-SemiBold SDF');
+    transition-duration: 0.2s;
+}
+
+.achievementImage {
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.unity-progress-bar {
+}

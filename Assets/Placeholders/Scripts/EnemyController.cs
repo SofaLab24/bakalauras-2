@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
         if (!isDead)
         {
             transform.LookAt(new Vector3(walkPoints[currentWalkPoint].position.x, heightOffset, walkPoints[currentWalkPoint].position.z));
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector3 direction = (new Vector3(target.position.x, heightOffset, target.position.z) - transform.position).normalized;
             direction = new Vector3(direction.x, 0, direction.z);
             transform.position = transform.position + direction * walkSpeed * Time.deltaTime;
             transform.position = new Vector3(transform.position.x, heightOffset, transform.position.z);

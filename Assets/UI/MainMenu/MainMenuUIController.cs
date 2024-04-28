@@ -10,6 +10,7 @@ public class MainMenuUIController : MonoBehaviour
 
     Label startGame;
     Label unlockTowers;
+    Label achievements;
     Label exitGame;
 
     VisualElement buttonsWrapper;
@@ -17,6 +18,11 @@ public class MainMenuUIController : MonoBehaviour
     VisualTreeAsset unlockTowerScreenTemplate;
     VisualElement unlockTowerScreen;
     Label unlockTowerScreenBackButton;
+
+    [SerializeField]
+    VisualTreeAsset achievementsScreenTemplate;
+    VisualElement achievementsScreen;
+    Label achievementsBackButton;
 
     Label flameLock;
     Label wizardLock;
@@ -31,21 +37,31 @@ public class MainMenuUIController : MonoBehaviour
     {
         menuManager = FindFirstObjectByType<MainMenuManager>();
         mainOverlay = GetComponent<UIDocument>();
+
         unlockTowerScreen = unlockTowerScreenTemplate.CloneTree();
         unlockTowerScreen.style.width = Length.Percent(100);
         unlockTowerScreen.style.height = Length.Percent(100);
+
+        achievementsScreen = achievementsScreenTemplate.CloneTree();
+        achievementsScreen.style.width = Length.Percent(100);
+        achievementsScreen.style.height = Length.Percent(100);
 
         startGame = mainOverlay.rootVisualElement.Q<Label>("Start");
         startGame.RegisterCallback<ClickEvent>(OnStartGame);
         unlockTowers = mainOverlay.rootVisualElement.Q<Label>("UnlockTowers");
         unlockTowers.RegisterCallback<ClickEvent>(OnUnlockTowers);
+        achievements = mainOverlay.rootVisualElement.Q<Label>("Achievements");
+        achievements.RegisterCallback<ClickEvent>(OnAchievemnts);
         exitGame = mainOverlay.rootVisualElement.Q<Label>("Exit");
         exitGame.RegisterCallback<ClickEvent>(OnExitGame);
         buttonsWrapper = mainOverlay.rootVisualElement.Q<VisualElement>("Buttons");
         
 
         unlockTowerScreenBackButton = unlockTowerScreen.Q<Label>("Back");
-        unlockTowerScreenBackButton.RegisterCallback<ClickEvent>(OnUnlockTowersBack);
+        unlockTowerScreenBackButton.RegisterCallback<ClickEvent>(OnBackToMainMenu);
+
+        achievementsBackButton = achievementsScreen.Q<Label>("Back");
+        achievementsBackButton.RegisterCallback<ClickEvent>(OnBackToMainMenu);
 
         highScore = mainOverlay.rootVisualElement.Q<Label>("Highscore");
         int currentHighScore = PlayerPrefs.GetInt(HIGHSCORE);
@@ -74,11 +90,17 @@ public class MainMenuUIController : MonoBehaviour
             }
         }
     }
-    void OnUnlockTowersBack(ClickEvent evt)
+    void OnAchievemnts(ClickEvent evt)
+    {
+        buttonsWrapper.Clear();
+        buttonsWrapper.Add(achievementsScreen);
+    }
+    void OnBackToMainMenu(ClickEvent evt)
     {
         buttonsWrapper.Clear();
         buttonsWrapper.Add(startGame);
         buttonsWrapper.Add(unlockTowers);
+        buttonsWrapper.Add(achievements);
         buttonsWrapper.Add(exitGame);
     }
     void OnExitGame(ClickEvent evt)

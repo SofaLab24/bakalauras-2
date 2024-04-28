@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainMenu/MainMenuButtons.uss?fileID=7433441132597879392&amp;guid=c3e17f6b6199854448a0ba7834147310&amp;type=3#MainMenuButtons" />
+    <ui:VisualElement name="Wrapper" style="flex-grow: 1; width: 100%; height: 100%;">
+        <ui:VisualElement name="Achievements" style="flex-grow: 1; flex-direction: row; height: 85%; width: 100%; position: absolute; top: 0;">
+            <ui:VisualElement name="Left" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center; width: 50%; height: 100%; position: absolute; left: 0;">
+                <ui:VisualElement name="Skeleton" class="achievement">
+                    <ui:Label tabindex="-1" text="Kill 50 Skeletons" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
+                    <ui:VisualElement name="Image" class="achievementImage" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/mugshots/green_hat.png?fileID=2800000&amp;guid=361891aedce79f64b8dc484f3ed3b117&amp;type=3#green_hat&apos;);" />
+                    <ui:ProgressBar value="22" name="Progress" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Spider" class="achievement">
+                    <ui:Label tabindex="-1" text="Kill 100 Spiders" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
+                    <ui:VisualElement name="Image" class="achievementImage" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/mugshots/spider.png?fileID=2800000&amp;guid=8f442ff36a12174449137fa83c1904a1&amp;type=3#spider&apos;);" />
+                    <ui:ProgressBar value="22" name="Progress" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Boss" class="achievement">
+                    <ui:Label tabindex="-1" text="Kill 150 Black Robots" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
+                    <ui:VisualElement name="Image" class="achievementImage" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/mugshots/boss.png?fileID=2800000&amp;guid=261bb8f79c2adcb48898e95c2dd04559&amp;type=3#boss&apos;);" />
+                    <ui:ProgressBar value="38.3" name="Progress" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Right" style="flex-grow: 1; position: absolute; right: 0; height: 100%; width: 50%; align-items: center; justify-content: center; align-self: center;">
+                <ui:VisualElement name="VisualElement" class="achievement" />
+                <ui:VisualElement name="VisualElement" class="achievement" />
+                <ui:VisualElement name="VisualElement" class="achievement" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label tabindex="-1" text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="selectButtons" style="width: 70%; height: 10%; position: absolute; bottom: 5%; left: 15%;" />
+    </ui:VisualElement>
+</ui:UXML>
