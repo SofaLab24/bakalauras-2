@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -23,6 +24,7 @@ public class MainMenuUIController : MonoBehaviour
     VisualTreeAsset achievementsScreenTemplate;
     VisualElement achievementsScreen;
     Label achievementsBackButton;
+    AchievementManager achievementManager;
 
     Label flameLock;
     Label wizardLock;
@@ -62,6 +64,7 @@ public class MainMenuUIController : MonoBehaviour
 
         achievementsBackButton = achievementsScreen.Q<Label>("Back");
         achievementsBackButton.RegisterCallback<ClickEvent>(OnBackToMainMenu);
+        achievementManager = GetComponent<AchievementManager>();
 
         highScore = mainOverlay.rootVisualElement.Q<Label>("Highscore");
         int currentHighScore = PlayerPrefs.GetInt(HIGHSCORE);
@@ -93,6 +96,7 @@ public class MainMenuUIController : MonoBehaviour
     void OnAchievemnts(ClickEvent evt)
     {
         buttonsWrapper.Clear();
+        achievementManager.ConfigureAchievementScreen(achievementsScreen);
         buttonsWrapper.Add(achievementsScreen);
     }
     void OnBackToMainMenu(ClickEvent evt)
@@ -109,8 +113,10 @@ public class MainMenuUIController : MonoBehaviour
     }
     void TestMethod(ClickEvent evt)
     {
-        menuManager.SetHighscore(100);
-        int currentHighScore = PlayerPrefs.GetInt(HIGHSCORE);
-        highScore.text = "Highscore: " + currentHighScore;
+        //menuManager.SetHighscore(100);
+        //int currentHighScore = PlayerPrefs.GetInt(HIGHSCORE);
+        //highScore.text = "Highscore: " + currentHighScore;
+
+        achievementManager.TestFunction(0);
     }
 }

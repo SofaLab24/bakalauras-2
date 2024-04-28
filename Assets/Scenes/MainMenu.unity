@@ -320,6 +320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89095678d12c7e146b3aff41c81f364d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  achievements:
+  - {fileID: 11400000, guid: d8c98a05ba6333d43a967812c772a50d, type: 2}
+  - {fileID: 11400000, guid: 697369483db83024e9c8b36c71303a91, type: 2}
+  - {fileID: 11400000, guid: 964afc8123f78a247b4ac5ab85ca3b52, type: 2}
+  incompleteAchievement: {fileID: 2800000, guid: 08c40dad38609dd48bd45afc397593b2,
+    type: 3}
 --- !u!1 &1374096054
 GameObject:
   m_ObjectHideFlags: 0

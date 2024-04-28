@@ -1900,10 +1900,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1e5c557eb1826488dae280ee2d10ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 100
+  currentMoney: 75
   arrowTowerCost: 25
   flameTowerCost: 50
   wizardTowerCost: 75
+  costInflation: 1.05
 --- !u!1 &1909421042
 GameObject:
   m_ObjectHideFlags: 0

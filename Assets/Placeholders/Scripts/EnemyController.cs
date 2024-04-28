@@ -5,6 +5,8 @@ using UnityEngine.VFX;
 
 public class EnemyController : MonoBehaviour
 {
+    public string enemyName;
+
     public List<Transform> walkPoints;
     public float walkSpeed;
     public int health = 3;
@@ -61,6 +63,7 @@ public class EnemyController : MonoBehaviour
     }
     public void PlayDeathExplosion()
     {
+        PlayerPrefs.SetInt(enemyName, PlayerPrefs.GetInt(enemyName) + 1);
         AudioManager.Instance.PlaySound(explosionSound, transform.position);
         deathExplosion.Play();
         GetComponent<MeshRenderer>().enabled = false;

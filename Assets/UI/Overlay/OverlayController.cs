@@ -144,12 +144,15 @@ public class OverlayController : MonoBehaviour
             Debug.Log("Add Wizard Tower");
         }
 
-        // THIS NEEDS TO BE REWORKED SOMEHOW
-        UpdateMoney(100);
     }
     public void TestMethod(ClickEvent evt)
     {
         TakeDamage(5);
+    }
+    public void UpdateTowerCost(string tower, int cost)
+    {
+        Label towerPrice = towerBar.Q<VisualElement>(tower).Q<Label>("Price");
+        towerPrice.text = "" + cost;
     }
     public void TakeDamage(int damage)
     {

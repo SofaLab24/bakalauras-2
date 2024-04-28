@@ -86,17 +86,17 @@ public class TowerManager : MonoBehaviour
         float offset;
 
         GameObject towerToPlace = arrowTower;
-        if (selectedTower == arrowTowerName && _moneyManager.BuyTower(_moneyManager.arrowTowerCost))
+        if (selectedTower == arrowTowerName && _moneyManager.BuyTower(arrowTowerName))
         { 
             towerToPlace = arrowTower;
             offset = arrowTowerHeightOffset;
         }
-        else if (selectedTower == flameTowerName && _moneyManager.BuyTower(_moneyManager.flameTowerCost))
+        else if (selectedTower == flameTowerName && _moneyManager.BuyTower(flameTowerName))
         {
             towerToPlace = flameTower;
             offset = flameTowerHeightOffset;
         }
-        else if (selectedTower == wizardTowerName && _moneyManager.BuyTower(_moneyManager.wizardTowerCost))
+        else if (selectedTower == wizardTowerName && _moneyManager.BuyTower(wizardTowerName))
         {
             towerToPlace = wizardTower;
             offset = wizardTowerHeightOffset;

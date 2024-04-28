@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d080425a170d704d838e4deeb19fe23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: Boss
   walkPoints: []
   walkSpeed: 1.5
   health: 10

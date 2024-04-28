@@ -16,7 +16,7 @@
                 <ui:VisualElement name="Boss" class="achievement">
                     <ui:Label tabindex="-1" text="Kill 150 Black Robots" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
                     <ui:VisualElement name="Image" class="achievementImage" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/mugshots/boss.png?fileID=2800000&amp;guid=261bb8f79c2adcb48898e95c2dd04559&amp;type=3#boss&apos;);" />
-                    <ui:ProgressBar value="38.3" name="Progress" />
+                    <ui:ProgressBar value="38.2" name="Progress" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Right" style="flex-grow: 1; position: absolute; right: 0; height: 100%; width: 50%; align-items: center; justify-content: center; align-self: center;">

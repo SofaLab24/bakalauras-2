@@ -50,10 +50,10 @@
     border-right-color: rgb(0, 0, 0);
     border-top-color: rgb(0, 0, 0);
     border-bottom-color: rgb(0, 0, 0);
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
     width: 35%;
     height: 30%;
     margin-top: 2%;
@@ -76,5 +76,10 @@
     -unity-background-scale-mode: stretch-to-fill;
 }
 
-.unity-progress-bar {
+.unity-progress-bar__progress {
+    background-color: rgb(131, 81, 102);
+}
+
+.unity-progress-bar__background {
+    background-color: rgba(0, 0, 0, 0);
 }
