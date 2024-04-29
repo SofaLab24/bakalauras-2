@@ -21,17 +21,17 @@
             </ui:VisualElement>
             <ui:VisualElement name="Right" style="flex-grow: 1; position: absolute; right: 0; height: 100%; width: 50%; align-items: center; justify-content: center; align-self: center;">
                 <ui:VisualElement name="FlameArrow" class="achievement">
-                    <ui:Label tabindex="-1" text="Unlock Flame Arrow Tower" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
+                    <ui:Label tabindex="-1" text="Build a Flame Arrow Tower" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
                     <ui:VisualElement name="Image" class="achievementImage" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/mugshots/green_hat.png?fileID=2800000&amp;guid=361891aedce79f64b8dc484f3ed3b117&amp;type=3#green_hat&apos;);" />
                     <ui:ProgressBar value="22" name="Progress" />
                 </ui:VisualElement>
                 <ui:VisualElement name="MagicArrow" class="achievement">
-                    <ui:Label tabindex="-1" text="Unlock Magic Arrow Tower" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
+                    <ui:Label tabindex="-1" text="Build a Magic Arrow Tower" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
                     <ui:VisualElement name="Image" class="achievementImage" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/mugshots/green_hat.png?fileID=2800000&amp;guid=361891aedce79f64b8dc484f3ed3b117&amp;type=3#green_hat&apos;);" />
                     <ui:ProgressBar value="22" name="Progress" />
                 </ui:VisualElement>
                 <ui:VisualElement name="FlameWizard" class="achievement">
-                    <ui:Label tabindex="-1" text="Unlock Flame Wizard Tower" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
+                    <ui:Label tabindex="-1" text="Build a Flame Wizard Tower" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="achievementLabel" />
                     <ui:VisualElement name="Image" class="achievementImage" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/mugshots/green_hat.png?fileID=2800000&amp;guid=361891aedce79f64b8dc484f3ed3b117&amp;type=3#green_hat&apos;);" />
                     <ui:ProgressBar value="22" name="Progress" />
                 </ui:VisualElement>

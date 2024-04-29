@@ -20,18 +20,12 @@ public class BaseController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        // update overlay
-        if (currentHealth <= 0) 
-        {
-            Debug.Log("YOU DIED!");
-            // TODO: trigger game loss logic
-        }
     }
     private void OnTriggerEnter(Collider other)
     {
         EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
         TakeDamage(enemyController.damage);
         overlayController.TakeDamage(enemyController.damage);
-        enemyController.PlayDeathExplosion();
+        enemyController.PlayDeathExplosion(false);
     }
 }

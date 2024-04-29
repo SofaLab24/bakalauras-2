@@ -1891,6 +1891,12 @@ MonoBehaviour:
     type: 3}
   flameWizardTowerHeightOffset: 1.2
   selectedTower: 
+  flameArrowAchievement: {fileID: 11400000, guid: a0ae79ce7409a4f46b64f1b80275a3e3,
+    type: 2}
+  magicArrowAchievement: {fileID: 11400000, guid: 6d3fd9e04e082ca43b8f62e482e729e0,
+    type: 2}
+  flameWizardAchievement: {fileID: 11400000, guid: 6769d2df5ae8b1744ae26a750a9b844f,
+    type: 2}
 --- !u!114 &1876883257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1903,7 +1909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1e5c557eb1826488dae280ee2d10ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 100
+  currentMoney: 1000
   arrowTowerCost: 25
   flameTowerCost: 200
   wizardTowerCost: 500

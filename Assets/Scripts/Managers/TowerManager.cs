@@ -47,6 +47,13 @@ public class TowerManager : MonoBehaviour
 
     const string HIGHSCORE = "HIGHSCORE";
 
+    [SerializeField]
+    AchievementInfo flameArrowAchievement;
+    [SerializeField]
+    AchievementInfo magicArrowAchievement;
+    [SerializeField]
+    AchievementInfo flameWizardAchievement;
+
     private void Awake()
     {
         int currentHighscore = PlayerPrefs.GetInt(HIGHSCORE);
@@ -115,6 +122,7 @@ public class TowerManager : MonoBehaviour
         if (((selectedTower == arrowTowerName && towerType == flameTowerName) || (selectedTower == flameTowerName && towerType == arrowTowerName))
             && _moneyManager.BuyTower(selectedTower))
         {
+            PlayerPrefs.SetInt(flameArrowAchievement.Name, 1);
             Vector3 location = callObject.transform.position;
             callObject.GetComponent<TowerCombinationController>().DestroyCurrentTower();
 
@@ -124,6 +132,8 @@ public class TowerManager : MonoBehaviour
         else if (((selectedTower == arrowTowerName && towerType == wizardTowerName) || (selectedTower == wizardTowerName && towerType == arrowTowerName))
             && _moneyManager.BuyTower(selectedTower))
         {
+            PlayerPrefs.SetInt(magicArrowAchievement.Name, 1);
+
             Vector3 location = callObject.transform.position;
             callObject.GetComponent<TowerCombinationController>().DestroyCurrentTower();
 
@@ -133,6 +143,8 @@ public class TowerManager : MonoBehaviour
         else if (((selectedTower == flameTowerName && towerType == wizardTowerName) || (selectedTower == wizardTowerName && towerType == flameTowerName))
     && _moneyManager.BuyTower(selectedTower))
         {
+            PlayerPrefs.SetInt(flameWizardAchievement.Name, 1);
+
             Vector3 location = callObject.transform.position;
             callObject.GetComponent<TowerCombinationController>().DestroyCurrentTower();
 

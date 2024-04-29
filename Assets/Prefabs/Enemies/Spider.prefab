@@ -108,9 +108,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   walkSpeed: 5
-  health: 6
+  health: 7
   moneyWorth: 20
   waveWorth: 35
   damage: 2

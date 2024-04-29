@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class OverlayController : MonoBehaviour
@@ -53,6 +54,9 @@ public class OverlayController : MonoBehaviour
     Label gameOverLabel;
     bool isDead;
     const string DEATH_LABEL_CLASS = "blurred";
+
+    Label restartButton;
+    Label mainMenuButton;
 
     Button testButton;
 
@@ -109,8 +113,8 @@ public class OverlayController : MonoBehaviour
         isCurrentlyInWave = false;
 
         // Death screen setup
-        testButton = mainOverlay.rootVisualElement.Q<Button>("TestButton");
-        testButton.RegisterCallback<ClickEvent>(TestMethod);
+        //testButton = mainOverlay.rootVisualElement.Q<Button>("TestButton");
+        //testButton.RegisterCallback<ClickEvent>(TestMethod);
         gameOverLabel = mainOverlay.rootVisualElement.Q<Label>("GameOver");
 
         // Load tower icons
@@ -143,6 +147,11 @@ public class OverlayController : MonoBehaviour
             towerBar.Add(towerIconElement);
             Debug.Log("Add Wizard Tower");
         }
+
+        restartButton = mainOverlay.rootVisualElement.Q<Label>("Restart");
+        restartButton.RegisterCallback<ClickEvent>(OnRestartClick);
+        mainMenuButton = mainOverlay.rootVisualElement.Q<Label>("MainMenu");
+        mainMenuButton.RegisterCallback<ClickEvent>(OnMainMenuClick);
 
     }
     public void TestMethod(ClickEvent evt)
@@ -178,6 +187,16 @@ public class OverlayController : MonoBehaviour
             child.AddToClassList(DEATH_LABEL_CLASS);
         }
         enemySpawner.DeathEvent();
+        restartButton.style.display = DisplayStyle.Flex;
+        mainMenuButton.style.display = DisplayStyle.Flex;
+    }
+    void OnRestartClick(ClickEvent evt)
+    {
+        SceneManager.LoadScene(1);
+    }
+    void OnMainMenuClick(ClickEvent evt)
+    {
+        SceneManager.LoadScene(0);
     }
     private void NewWave(ClickEvent evt)
     {

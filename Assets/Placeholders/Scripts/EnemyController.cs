@@ -70,6 +70,17 @@ public class EnemyController : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         isDead = true;
     }
+    public void PlayDeathExplosion(bool isDead)
+    {
+        if (!isDead)
+        {
+            AudioManager.Instance.PlaySound(explosionSound, transform.position);
+            deathExplosion.Play();
+            GetComponent<MeshRenderer>().enabled = false;
+            isDead = true;
+        }
+        else PlayDeathExplosion();
+    }
     public void TakeDamage(int damage)
     {
         health -= damage;
