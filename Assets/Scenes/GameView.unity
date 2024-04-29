@@ -731,7 +731,10 @@ MonoBehaviour:
   - {fileID: -4542769716728485359, guid: bbf646a8d8a37484c8177d6f2bd5998b, type: 3}
   spawnInterval: 1
   waveNumber: 0
-  waveCoinMultiplier: 25
+  waveWorthMultiplier: 20
+  waveInflation: 1.15
+  spawnRateDecrease: 0.95
+  additionalHealthPerWaveCount: 5
 --- !u!1 &700478438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,11 +1903,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1e5c557eb1826488dae280ee2d10ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 75
+  currentMoney: 100
   arrowTowerCost: 25
-  flameTowerCost: 50
-  wizardTowerCost: 75
-  costInflation: 1.05
+  flameTowerCost: 200
+  wizardTowerCost: 500
+  costInflation: 1.1
 --- !u!1 &1909421042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,8 +2206,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1478059477}
-  - {fileID: 1876883255}
   - {fileID: 700478439}
+  - {fileID: 1876883255}
   - {fileID: 590552560}
   - {fileID: 1918563520}
   - {fileID: 1185901038}

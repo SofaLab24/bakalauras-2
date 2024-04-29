@@ -11,7 +11,10 @@ public class EnemySpawner : MonoBehaviour
     public List<EnemyController> enemies;
     public float spawnInterval = 2f;
     public int waveNumber;
-    public int waveCoinMultiplier = 20;
+    public int waveWorthMultiplier = 20;
+    public float waveInflation = 1.05f;
+    public float spawnRateDecrease = 0.95f;
+    public int additionalHealthPerWaveCount = 5;
 
     List<EnemyController> currentWave;
     OverlayController overlayController;
@@ -32,21 +35,24 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < currentWave.Count; i++)
         {
             currentWave[i].walkPoints = walkPoints[Random.Range(0, walkPoints.Count)];
-            Instantiate(currentWave[i], new Vector3(transform.position.x, transform.position.y + currentWave[i].heightOffset, transform.position.z), Quaternion.identity);
+            EnemyController enemy = Instantiate(currentWave[i], new Vector3(transform.position.x, transform.position.y + currentWave[i].heightOffset, transform.position.z), Quaternion.identity);
+            int additionalHealth = Mathf.FloorToInt((currentWave.Count * 1f) / additionalHealthPerWaveCount);
+            enemy.health += additionalHealth;
             yield return new WaitForSeconds(spawnInterval);
         }
+        spawnInterval *= spawnRateDecrease;
         overlayController.ShowNextWaveButton();
     }
-    List<EnemyController> EnemiesToSpawn(int moneyCount)
+    List<EnemyController> EnemiesToSpawn(int waveCount)
     {
         List<EnemyController> enemiesArray = new List<EnemyController>();
-        while (moneyCount > 0)
+        while (waveCount > 0)
         {
             EnemyController enemyToAdd = enemies[Random.Range(0, enemies.Count)];
-            if (enemyToAdd.moneyWorth < moneyCount + enemies[0].moneyWorth)
+            if (enemyToAdd.waveWorth < waveCount + enemies[0].waveWorth)
             {
                 enemiesArray.Add(enemyToAdd);
-                moneyCount -= enemyToAdd.moneyWorth;
+                waveCount -= enemyToAdd.waveWorth;
             }
         }
         return enemiesArray;
@@ -54,7 +60,8 @@ public class EnemySpawner : MonoBehaviour
     public void GenerateNextWave()
     {
         waveNumber++;
-        currentWave = EnemiesToSpawn(waveNumber * waveCoinMultiplier);
+        currentWave = EnemiesToSpawn(waveNumber * waveWorthMultiplier);
+        waveWorthMultiplier = Mathf.FloorToInt(waveWorthMultiplier * waveInflation);
         StartCoroutine(SpawnEnemies());
     }
     public void AddWalkPoint(Vector3 pos, int pathIndex)

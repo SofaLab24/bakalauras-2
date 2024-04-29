@@ -31,14 +31,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68aa87786e8c0d045a435183a615bf33, type: 3}
-  m_Name: DownscaleEffect
+  m_Name: DownscaleEffects
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
     IsEnabled: 1
     WhenToInsert: 550
-    MaterialToBlit: {fileID: 2100000, guid: f93db50d91e5e6847bed630ba87f482e, type: 2}
-    DownscaleAmount: 4
+    DownscaleMaterial: {fileID: 2100000, guid: f93db50d91e5e6847bed630ba87f482e, type: 2}
+    DownscaleAmount: 2
+    spread: 0.5
+    redColorCount: 8
+    greenColorCount: 8
+    blueColorCount: 8
+    bayerLevel: 0
+    pointFilterDown: 0
+    SharpnessMaterial: {fileID: 2100000, guid: 077373800a4c312449408d79da07e3d4, type: 2}
+    sharpnessAmount: -2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

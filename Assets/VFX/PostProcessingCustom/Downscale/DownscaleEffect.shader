@@ -1,4 +1,4 @@
-Shader "Hidden/PixelArtFilter" {
+Shader "Hidden/DownscaleEffect" {
     Properties {
         _MainTex ("Texture", 2D) = "white" {}
     }

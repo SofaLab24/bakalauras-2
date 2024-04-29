@@ -105,9 +105,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   walkSpeed: 5
-  health: 3
+  health: 6
   moneyWorth: 20
+  waveWorth: 35
   damage: 2
   isDead: 0
   heightOffset: 0.04

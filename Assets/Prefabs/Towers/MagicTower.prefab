@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerRadius: 20
-  shootingDelay: 5
-  bulletDamage: 5
+  shootingDelay: 4
+  bulletDamage: 4
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64

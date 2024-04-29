@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public float walkSpeed;
     public int health = 3;
     public int moneyWorth = 5;
+    public int waveWorth;
     public int damage = 1;
 
     private VisualEffect deathExplosion;

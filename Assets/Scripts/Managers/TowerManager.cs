@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
-using static UnityEditor.FilePathAttribute;
 
 public class TowerManager : MonoBehaviour
 {

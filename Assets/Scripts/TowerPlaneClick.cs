@@ -10,7 +10,6 @@ public class TowerPlaneClick : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Clicked");
         _towerManager.PlaceTower(gameObject);
     }
 }
