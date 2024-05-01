@@ -21,14 +21,6 @@ public class PathGenerator : MonoBehaviour
     [SerializeField]
     GameObject pathSpawnPoint;
 
-    [Header("L-system generation")]
-    [SerializeField]
-    string generationVariableS = "TTP";
-    [SerializeField]
-    string generationVariableT = "TST";
-    [SerializeField]
-    string generationVariableP = "STS";
-
     public Vector3 firstLocation = Vector3.zero;
 
     EnemyManager enemySpawner;

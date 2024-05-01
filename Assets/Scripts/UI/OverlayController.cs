@@ -58,8 +58,6 @@ public class OverlayController : MonoBehaviour
     Label restartButton;
     Label mainMenuButton;
 
-    Button testButton;
-
     private void Start()
     {
         isDead = false;
@@ -113,8 +111,6 @@ public class OverlayController : MonoBehaviour
         isCurrentlyInWave = false;
 
         // Death screen setup
-        //testButton = mainOverlay.rootVisualElement.Q<Button>("TestButton");
-        //testButton.RegisterCallback<ClickEvent>(TestMethod);
         gameOverLabel = mainOverlay.rootVisualElement.Q<Label>("GameOver");
 
         // Load tower icons
@@ -153,10 +149,6 @@ public class OverlayController : MonoBehaviour
         mainMenuButton = mainOverlay.rootVisualElement.Q<Label>("MainMenu");
         mainMenuButton.RegisterCallback<ClickEvent>(OnMainMenuClick);
 
-    }
-    public void TestMethod(ClickEvent evt)
-    {
-        TakeDamage(5);
     }
     public void UpdateTowerCost(string tower, int cost)
     {

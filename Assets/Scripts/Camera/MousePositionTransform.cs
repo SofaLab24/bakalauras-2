@@ -6,9 +6,7 @@ using UnityEngine.InputSystem;
 
 public class MousePositionTransform : MonoBehaviour
 {
-    // Mainly for debugging
     Vector3 mPosition;
-    Vector3 adjustedTransform;
  
     [SerializeField]
     float sensitivity = 0.3f;
@@ -44,12 +42,10 @@ public class MousePositionTransform : MonoBehaviour
         // Y movement
         if (Mouse.current.scroll.ReadValue().y > 0 && transform.position.y >= 0) // zoom in
         {
-            Debug.Log("Zooming in");
             transform.position = new Vector3(transform.position.x, transform.position.y - Time.deltaTime * zoomSpeed, transform.position.z);
         }
         else if (Mouse.current.scroll.ReadValue().y < 0 && transform.position.y <= maxZoomOut) // zoom out
         {
-            Debug.Log("Zooming out");
             transform.position = new Vector3(transform.position.x, transform.position.y + Time.deltaTime * zoomSpeed, transform.position.z);
         }
     }

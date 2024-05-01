@@ -32,12 +32,8 @@ public class MainMenuUIController : MonoBehaviour
     Label highScore;
     const string HIGHSCORE = "HIGHSCORE";
 
-    MainMenuManager menuManager;
-
-    Button testButton;
     private void Start()
     {
-        menuManager = FindFirstObjectByType<MainMenuManager>();
         mainOverlay = GetComponent<UIDocument>();
 
         unlockTowerScreen = unlockTowerScreenTemplate.CloneTree();
@@ -69,9 +65,6 @@ public class MainMenuUIController : MonoBehaviour
         highScore = mainOverlay.rootVisualElement.Q<Label>("Highscore");
         int currentHighScore = PlayerPrefs.GetInt(HIGHSCORE);
         highScore.text = "Highscore: " + currentHighScore;
-
-        testButton = mainOverlay.rootVisualElement.Q<Button>("TestButton");
-        testButton.RegisterCallback<ClickEvent>(TestMethod);
 
         flameLock = unlockTowerScreen.Q<Label>("FlameLock");
         wizardLock = unlockTowerScreen.Q<Label>("WizardLock");
@@ -110,13 +103,5 @@ public class MainMenuUIController : MonoBehaviour
     void OnExitGame(ClickEvent evt)
     {
         Application.Quit();
-    }
-    void TestMethod(ClickEvent evt)
-    {
-        //menuManager.SetHighscore(100);
-        //int currentHighScore = PlayerPrefs.GetInt(HIGHSCORE);
-        //highScore.text = "Highscore: " + currentHighScore;
-
-        achievementManager.TestFunction(0);
     }
 }

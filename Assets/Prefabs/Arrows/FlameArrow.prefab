@@ -175,11 +175,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7797287892863233490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a960e959720e1174eae49c07e5a04447, type: 3}
+  m_Script: {fileID: 11500000, guid: 2054db580e573004f90f0d702299a82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  bulletSpeed: 75
+  bulletSpeed: 100
   bulletDamage: 2
 --- !u!136 &4228946207458129184
 CapsuleCollider:
