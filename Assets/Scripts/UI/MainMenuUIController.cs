@@ -77,6 +77,7 @@ public class MainMenuUIController : MonoBehaviour
     {
         buttonsWrapper.Clear();
         buttonsWrapper.Add(unlockTowerScreen);
+        PlayerPrefs.SetInt(HIGHSCORE, 22);
         if (PlayerPrefs.GetInt(HIGHSCORE) >= 20)
         {
             flameLock.style.visibility = Visibility.Hidden;

@@ -121,9 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4be14d8f5c6ae84c9ac147036d4288c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: ARROW
   towerRadius: 10
   shootingDelay: 3.3
-  bulletDamage: 2
+  towerDamage: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64

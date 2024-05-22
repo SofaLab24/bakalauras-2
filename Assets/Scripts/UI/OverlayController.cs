@@ -80,6 +80,37 @@ public class OverlayController : MonoBehaviour
         towerBar = mainOverlay.rootVisualElement.Q<VisualElement>("TowerBar");
         towerBar.pickingMode = PickingMode.Ignore;
 
+        // Load tower icons
+        if (_towerManager.arrowTowerUnlocked)
+        {
+            VisualElement towerIconElement = towerIconPrefabTree.CloneTree().Q("TowerIcon");
+            towerIconElement.name = "ARROW";
+            towerIconElement.style.backgroundImage = arrowTowerIcon;
+            towerIconElement.RegisterCallback<ClickEvent, string>(SelectTower, "ARROW");
+
+            towerBar.Add(towerIconElement);
+            Debug.Log("Add Arrow Tower");
+        }
+        if (_towerManager.flameTowerUnlocked)
+        {
+            VisualElement towerIconElement = towerIconPrefabTree.CloneTree().Q("TowerIcon");
+            towerIconElement.name = "FLAME";
+            towerIconElement.style.backgroundImage = flameTowerIcon;
+            towerIconElement.RegisterCallback<ClickEvent, string>(SelectTower, "FLAME");
+
+            towerBar.Add(towerIconElement);
+            Debug.Log("Add Flame Tower");
+        }
+        if (_towerManager.wizardTowerUnlocked)
+        {
+            VisualElement towerIconElement = towerIconPrefabTree.CloneTree().Q("TowerIcon");
+            towerIconElement.name = "WIZARD";
+            towerIconElement.style.backgroundImage = wizardTowerIcon;
+            towerIconElement.RegisterCallback<ClickEvent, string>(SelectTower, "WIZARD");
+            towerBar.Add(towerIconElement);
+            Debug.Log("Add Wizard Tower");
+        }
+
         // Hearts overlay
         baseController = FindFirstObjectByType<BaseManager>();
         heartBar = mainOverlay.rootVisualElement.Q<VisualElement>("HeartsContainer");
@@ -112,37 +143,6 @@ public class OverlayController : MonoBehaviour
 
         // Death screen setup
         gameOverLabel = mainOverlay.rootVisualElement.Q<Label>("GameOver");
-
-        // Load tower icons
-        if (_towerManager.arrowTowerUnlocked)
-        {
-            VisualElement towerIconElement = towerIconPrefabTree.CloneTree().Q("TowerIcon");
-            towerIconElement.name = "ARROW";
-            towerIconElement.style.backgroundImage = arrowTowerIcon;
-            towerIconElement.RegisterCallback<ClickEvent, string>(SelectTower, "ARROW");
-
-            towerBar.Add(towerIconElement);
-            Debug.Log("Add Arrow Tower");
-        }
-        if (_towerManager.flameTowerUnlocked)
-        {
-            VisualElement towerIconElement = towerIconPrefabTree.CloneTree().Q("TowerIcon");
-            towerIconElement.name = "FLAME";
-            towerIconElement.style.backgroundImage = flameTowerIcon;
-            towerIconElement.RegisterCallback<ClickEvent, string>(SelectTower, "FLAME");
-
-            towerBar.Add(towerIconElement);
-            Debug.Log("Add Flame Tower");
-        }
-        if (_towerManager.wizardTowerUnlocked)
-        {
-            VisualElement towerIconElement = towerIconPrefabTree.CloneTree().Q("TowerIcon");
-            towerIconElement.name = "WIZARD";
-            towerIconElement.style.backgroundImage = wizardTowerIcon;
-            towerIconElement.RegisterCallback<ClickEvent, string>(SelectTower, "WIZARD");
-            towerBar.Add(towerIconElement);
-            Debug.Log("Add Wizard Tower");
-        }
 
         restartButton = mainOverlay.rootVisualElement.Q<Label>("Restart");
         restartButton.RegisterCallback<ClickEvent>(OnRestartClick);

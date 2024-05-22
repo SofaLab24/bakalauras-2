@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17501761dd5695246a905c714703299b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: FLAME
   towerRadius: 8.5
   shootingDelay: 2
   towerDamage: 1

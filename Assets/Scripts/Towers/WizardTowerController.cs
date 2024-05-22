@@ -3,57 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class WizardTowerController : MonoBehaviour
+public class WizardTowerController : TowerController
 {
-    public float towerRadius = 25f;
-    public float shootingDelay = 5f;
-    public int towerDamage = 7;
-    [SerializeField]
-    LayerMask enemyLayer;
     [SerializeField]
     VisualEffect lightningBeam;
-
-    GameObject nearestEnemy;
-
-    public AudioClip lightningSound;
+    [SerializeField]
+    AudioClip lightningSound;
 
     public void Start()
     {
         StartCoroutine(ShootAtEnemy());
     }
 
-    public GameObject FindNearestEnemy(float radius)
-    {
-        //should use OverlapSphereNoAlloc
-        Collider[] Enemies = Physics.OverlapSphere(transform.position, radius, enemyLayer);
-        float closest = Mathf.Abs(radius * radius * radius);
-        GameObject closestEnemy = null;
-        if (Enemies.Length == 0)
-        {
-            return closestEnemy;
-        }
-
-        foreach(var enemy in Enemies)
-        {
-            EnemyController en = enemy.GetComponent<EnemyController>();
-            if (!en.isDead)
-            {
-                float length = Vector3.Distance(enemy.transform.position, transform.position);
-                if (length <= closest)
-                {
-                    closestEnemy = enemy.gameObject;
-                    closest = length;
-                }
-            }
-        }
-        return closestEnemy;
-    }
-
-    IEnumerator ShootAtEnemy()
+    public override IEnumerator ShootAtEnemy()
     {
         while (true)
         {
-            nearestEnemy = FindNearestEnemy(towerRadius);
+            GameObject nearestEnemy = FindNearestEnemy(towerRadius);
             if (nearestEnemy != null)
             {
                 nearestEnemy.GetComponent<EnemyController>().TakeDamage(towerDamage);

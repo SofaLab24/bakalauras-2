@@ -18,7 +18,6 @@ public class EnemyController : MonoBehaviour
     private bool hasDeathExplosionPlayed;
     public bool isDead;
 
-    private Rigidbody rb;
     private Transform target;
     private int currentWalkPoint;
 
@@ -29,7 +28,6 @@ public class EnemyController : MonoBehaviour
     {
         hasDeathExplosionPlayed = false;
         isDead = false;
-        rb = GetComponent<Rigidbody>();
         currentWalkPoint = walkPoints.Count-1;
         target = walkPoints[currentWalkPoint];
         transform.position = target.position;

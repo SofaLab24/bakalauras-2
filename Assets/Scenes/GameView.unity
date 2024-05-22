@@ -1896,7 +1896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1e5c557eb1826488dae280ee2d10ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 100
+  currentMoney: 1000
   arrowTowerCost: 25
   flameTowerCost: 200
   wizardTowerCost: 500
